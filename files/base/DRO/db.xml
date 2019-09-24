@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<container xmlns="http://symfony.com/schema/dic/services"
+		   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		   xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+	<parameters>
+		<parameter key="connection_params" type="collection">
+			<parameter key="driver">oci8</parameter>
+			<parameter key="driverClass">\Zeedhi\Framework\DBAL\Driver\OCI8\Driver</parameter>
+			<parameter key="user">DRO</parameter>
+			<parameter key="password">YitscL2OXeLZXOXHm1RzBx15agpmxfzg801x13e/dZM=</parameter>
+			<parameter key="host">192.168.120.140</parameter>
+			<parameter key="port">1521</parameter>
+			<parameter key="dbname">XE</parameter>
+			<parameter key="charset">AL32UTF8</parameter>
+			<parameter key="service">true</parameter>
+			<parameter key="isEncrypted">true</parameter>
+			<parameter key="useVpd">false</parameter>
+			<parameter key="vpdPassword">YitscL2OXeLZXOXHm1RzBx15agpmxfzg801x13e/dZM=</parameter>
+			<parameter key="vpdWithWallet">false</parameter>
+			
+			<parameter key="platform" type="service" id="customOraclePlatform"/>
+		</parameter>
+	</parameters>
+</container>
