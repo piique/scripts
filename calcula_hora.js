@@ -11,15 +11,23 @@ var usuario = 'pedrovalverde';
 var pass = 'teknisa2';
 
 function login(usuario, pass){
-    document.getElementById('int_login:tab_int_login:acesso').value = usuario;
-    document.getElementById('int_login:tab_int_login:senha').value = pass;
-    document.getElementById('int_login:tab_int_login:valida').click();
+    if(document.getElementById('int_login:tab_int_login:valida')){
+        document.getElementById('int_login:tab_int_login:acesso').value = usuario;
+        document.getElementById('int_login:tab_int_login:senha').value = pass;
+        document.getElementById('int_login:tab_int_login:valida').click();
+    }
     setTimeout(function(){
-        document.getElementById('menu1003871').click();
+        if(document.getElementById('menu1003871')){
+            document.getElementById('menu1003871').click();
+        }
         setTimeout(function(){
-            document.getElementById('win_int00018_000:tab_int00018_000_000_filter:filter').click();
+            if(document.getElementById('win_int00018_000:tab_int00018_000_000_filter:filter')){
+                document.getElementById('win_int00018_000:tab_int00018_000_000_filter:filter').click();
+            }
             setTimeout(function(){
-                document.getElementsByClassName('slick-cell lr l1 r1 tk-date-cell disabled')[document.getElementsByClassName('slick-cell lr l1 r1 tk-date-cell disabled').length-1].click();
+                if(document.getElementsByClassName('slick-cell lr l1 r1 tk-date-cell disabled')[document.getElementsByClassName('slick-cell lr l1 r1 tk-date-cell disabled').length-1]){
+                    document.getElementsByClassName('slick-cell lr l1 r1 tk-date-cell disabled')[document.getElementsByClassName('slick-cell lr l1 r1 tk-date-cell disabled').length-1].click();
+                }
                 setTimeout(function(){
                     calculaHora(document.getElementById('win_int00018_000:tab_int00018_000_001:grid').getElementsByClassName('slick-viewport')[0].getElementsByClassName('grid-canvas')[0]);
                 }, 4000);
@@ -60,9 +68,6 @@ function calculaHora(gridElement){
                 }
             }
         }
-        console.log(almoco);
-        console.log(retirarValor);
-        console.log(totalTrabalhado);
         window.alert('Faltam ' + ( minutesToTime(horasDia - totalTrabalhado - retirarValor + almoco) ) + ' para ir embora.\n'
         + 'Horário de saída: '+  ( minutesToTime(horaAtual + (horasDia - totalTrabalhado) - retirarValor + almoco) ) );
     }
@@ -97,6 +102,7 @@ if(document.getElementsByClassName('slick-cell lr l1 r1 tk-date-cell disabled')[
     if(document.getElementsByClassName('ui-dialog ui-widget ui-widget-content ui-corner-all ui-draggable')[0] != undefined){
         document.getElementById('win_int_sessao_expirou:tab_int_sessao_expirou:senha').value = pass;
         document.getElementById('win_int_sessao_expirou:tab_int_sessao_expirou:confirm').click();
+        document.getElementById('win_int00018_000:tab_int00018_000_000:tk_reload_filter').getElementsByClassName('actionButton')[0].click();
         setTimeout(function(){
             document.getElementsByClassName('slick-cell lr l1 r1 tk-date-cell disabled')[document.getElementsByClassName('slick-cell lr l1 r1 tk-date-cell disabled').length-1].click();
             setTimeout(function(){
@@ -104,10 +110,13 @@ if(document.getElementsByClassName('slick-cell lr l1 r1 tk-date-cell disabled')[
             }, 4000);
         }, 3000);
     }else{
-        document.getElementsByClassName('slick-cell lr l1 r1 tk-date-cell disabled')[document.getElementsByClassName('slick-cell lr l1 r1 tk-date-cell disabled').length-1].click();
+        document.getElementById('win_int00018_000:tab_int00018_000_000:tk_reload_filter').getElementsByClassName('actionButton')[0].click();
         setTimeout(function(){
-            calculaHora(document.getElementById('win_int00018_000:tab_int00018_000_001:grid').getElementsByClassName('slick-viewport')[0].getElementsByClassName('grid-canvas')[0]);
-        }, 4000);
+            document.getElementsByClassName('slick-cell lr l1 r1 tk-date-cell disabled')[document.getElementsByClassName('slick-cell lr l1 r1 tk-date-cell disabled').length-1].click();
+            setTimeout(function(){
+                calculaHora(document.getElementById('win_int00018_000:tab_int00018_000_001:grid').getElementsByClassName('slick-viewport')[0].getElementsByClassName('grid-canvas')[0]);
+            }, 2000);
+        }, 1750);
     }
 }else{
     login(usuario, pass);
