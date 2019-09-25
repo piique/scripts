@@ -6,7 +6,7 @@
 
     Pedro Valverde
 */
-
+javascript: 
 var usuario = 'pedrovalverde';
 var pass = 'teknisa2';
 
@@ -68,11 +68,11 @@ function calculaHora(gridElement) {
         for (let i = 0; i < qtdIntervalos; i++) {
             saida = timeToMinutes(gridElement.children[i].children[2].innerHTML);
             entrada = timeToMinutes(gridElement.children[i + 1].children[1].innerHTML);
-            intervalos[i] = entrada - saida;
-            if (intervalos[i] > maiorIntervalo) {
-                maiorIntervalo = [intervalo, i];
+            intervalo = entrada - saida;
+            if (intervalo > maiorIntervalo) {
+                maiorIntervalo = intervalo
             }
-            if (intervalos[i] <= 2) {
+            if (intervalo <= 2) {
                 totalTrabalhado += intervalo;
             }
         }
@@ -94,7 +94,6 @@ function timeToMinutes(time) {
 };
 
 function minutesToTime(minutes) {
-    z
     var hora = Math.trunc(minutes / 60).toString().length == 1 ? '0' + Math.trunc(minutes / 60) : Math.trunc(minutes / 60).toString();
     var minutos = (minutes % 60).toString().length == 1 ? '0' + (minutes % 60) : (minutes % 60).toString();
 
