@@ -39,35 +39,48 @@ function login(usuario, pass){
 function calculaHora(gridElement){
     let horario_base = '09:00';
     let horas_por_dia = '08:00';
-    let horasDia = timeToMinutes(horas_por_dia);
     let horaAtual = getHoraAtual();
+    let horasDia = timeToMinutes(horas_por_dia);
+    var horaEntrada = timeToMinutes(gridElement.children[0].children[1].innerHTML);
+    var totalTrabalhado = 0;
 
-
-    let horaEntrada = timeToMinutes(gridElement.children[0].children[1].innerHTML) >= timeToMinutes(horario_base) -5 ? timeToMinutes(gridElement.children[0].children[1].innerHTML) : timeToMinutes(horario_base) -5;
+    horario_base = timeToMinutes(horario_base);
+    
+    if( horaEntrada < horario_base - 5 ){
+        totalTrabalhado += -((horario_base - 5) - horaEntrada);
+        horaEntrada = horario_base - 5;
+    }
     
     if(gridElement.childElementCount == 1){
         window.alert('Faltam ' + (minutesToTime( horasDia - (horaAtual - horaEntrada) + 60)) + ' para ir embora.\n'
         + 'Horário de saída: '+ ( minutesToTime(horasDia - (horaAtual - horaEntrada) + 60 + horaAtual) ) );
     }else if(gridElement.childElementCount >= 3){
         let ultimaEntrada = timeToMinutes(gridElement.children[gridElement.childElementCount-2].children[1].innerHTML);
-        let totalTrabalhado = horaAtual - ultimaEntrada + timeToMinutes(gridElement.children[gridElement.childElementCount-1].children[gridElement.children[gridElement.childElementCount-1].childElementCount-1].innerHTML);
+        totalTrabalhado += horaAtual - ultimaEntrada + timeToMinutes(gridElement.children[gridElement.childElementCount-1].children[gridElement.children[gridElement.childElementCount-1].childElementCount-1].innerHTML);
+
         var intervalos = [];
         var qtdIntervalos = gridElement.childElementCount - 2;
         var retirarValor = 0;
         let almoco = 60;
+        
+        var maiorIntervalo = 0;
 
         for(let i = 0; i < qtdIntervalos; i++){
-            intervalos[i] = timeToMinutes(gridElement.children[i+1].children[1].innerHTML) - timeToMinutes(gridElement.children[i].children[2].innerHTML);
+            saida = timeToMinutes(gridElement.children[i].children[2].innerHTML)
+            entrada = timeToMinutes(gridElement.children[i+1].children[1].innerHTML);
+            intervalos[i] = entrada - saida;
+            if(intervalos[i] > maiorIntervalo){
+                maiorIntervalo = [intervalo, i];
+            }
             if(intervalos[i] <= 2){
-                retirarValor += intervalos[i];
-            }else if(intervalos[i] > 30){
-                if(intervalos[i] > 60){
-                    almoco = (intervalos[i] - 60);
-                }else{
-                    almoco = 0;
-                }
+                totalTrabalhado += intervalo;
             }
         }
+
+        if(maiorIntervalo[0] > 30){
+            almoco = 0
+        }
+
         window.alert('Faltam ' + ( minutesToTime(horasDia - totalTrabalhado - retirarValor + almoco) ) + ' para ir embora.\n'
         + 'Horário de saída: '+  ( minutesToTime(horaAtual + (horasDia - totalTrabalhado) - retirarValor + almoco) ) );
     }
@@ -80,7 +93,7 @@ function timeToMinutes (time){
     return (hora*60) + minutos;
 };
 
-function minutesToTime (minutes){
+function minutesToTime (minutes){z
     var hora = Math.trunc(minutes / 60).toString().length == 1 ?   '0' + Math.trunc(minutes / 60) : Math.trunc(minutes / 60).toString();
     var minutos = (minutes % 60).toString().length == 1 ? '0' + (minutes % 60) : (minutes % 60).toString();
     
