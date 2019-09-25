@@ -66,7 +66,7 @@ function calculaHora(gridElement) {
         var maiorIntervalo = 0;
 
         for (let i = 0; i < qtdIntervalos; i++) {
-            saida = timeToMinutes(gridElement.children[i].children[2].innerHTML)
+            saida = timeToMinutes(gridElement.children[i].children[2].innerHTML);
             entrada = timeToMinutes(gridElement.children[i + 1].children[1].innerHTML);
             intervalos[i] = entrada - saida;
             if (intervalos[i] > maiorIntervalo) {
@@ -78,7 +78,7 @@ function calculaHora(gridElement) {
         }
 
         if (maiorIntervalo[0] > 30) {
-            almoco = 0
+            almoco = 0;
         }
 
         window.alert('Faltam ' + (minutesToTime(horasDia - totalTrabalhado - retirarValor + almoco)) + ' para ir embora.\n' +
