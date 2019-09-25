@@ -77,10 +77,10 @@ function calculaHora(gridElement) {
             }
         }
 
-        if (maiorIntervalo[0] > 30) {
+        if (maiorIntervalo > 30) {
             almoco = 0;
         }
-
+        
         window.alert('Faltam ' + (minutesToTime(horasDia - totalTrabalhado - retirarValor + almoco)) + ' para ir embora.\n' +
             'Horário de saída: ' + (minutesToTime(horaAtual + (horasDia - totalTrabalhado) - retirarValor + almoco)));
     }
