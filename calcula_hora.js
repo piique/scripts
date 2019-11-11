@@ -9,6 +9,16 @@
     Criado inicialmente para CLT's -> futuras implementações para estagiário.
 
     Criado por: piique
+
+    Script created to calculate time to go.
+    To make it work it's necessary:
+    1- Set the variables below. If don't want to put your user and pass here, just type as you usual do;
+    2- Click with the rigth button on the bookmark bar (Chrome: Ctrl + Shift + B).
+    3- Add page and then copy and paste all the content below this comment into URL.
+    4- Name is for your preference.
+    Save the bookmark and then go to intranet site and press the bookmark to see the magic happens.
+
+    Created by: piique
 */
 
 javascript: 
