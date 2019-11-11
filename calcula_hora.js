@@ -152,6 +152,6 @@ if (document.getElementsByClassName('slick-cell lr l1 r1 tk-date-cell disabled')
     }
 } else {
     usuario = usuario == '<USUARIO>' ? document.getElementById('int_login:tab_int_login:acesso').value : usuario;
-    senha = senha == '<SENHA>' ? document.getElementById('int_login:tab_int_login:acesso').value : senha;
+    senha = senha == '<SENHA>' ? document.getElementById('int_login:tab_int_login:senha').value : senha;
     login(usuario, senha);
 }
