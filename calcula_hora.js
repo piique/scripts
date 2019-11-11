@@ -22,8 +22,8 @@
 */
 
 javascript: 
-var usuario = 'USUARIO';
-var senha = 'SENHA';
+var usuario = '<USUARIO>';
+var senha = '<SENHA>';
 
 var horario_base = '09:00';
 var horas_por_dia = '08:00';
