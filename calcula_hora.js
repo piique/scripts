@@ -6,7 +6,7 @@
     3- Adicionar página e em URL copiar e colar todo o conteúdo abaixo desse comentário.
     4- Nome de preferencia para o favorito.
     Após isso, rodar o scrip ao clicar no favorito criado e esperar para que o trabalho seja feito.
-    Criado inicialmente para CLT's -> futuras implementações para estagiário.
+    Criado para CLTs.
 
     Criado por: piique
 
@@ -151,7 +151,9 @@ if (document.getElementsByClassName('slick-cell lr l1 r1 tk-date-cell disabled')
         }, 1750);
     }
 } else {
-    usuario = usuario == '<USUARIO>' ? document.getElementById('int_login:tab_int_login:acesso').value : usuario;
-    senha = senha == '<SENHA>' ? document.getElementById('int_login:tab_int_login:senha').value : senha;
+    if(document.getElementById('int_login:tab_int_login:acesso')){
+		usuario = usuario == '<USUARIO>' ? document.getElementById('int_login:tab_int_login:acesso').value : usuario;
+		senha = senha == '<SENHA>' ? document.getElementById('int_login:tab_int_login:senha').value : senha;
+    }
     login(usuario, senha);
 }
