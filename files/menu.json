@@ -1,0 +1,98 @@
+[
+    {
+         "id": "90884303641072463142417",
+         "name": "gop",
+         "label": "Gestão Operacional",
+         "parent": "application",
+         "isVisible": true,
+         "order": 26,
+         "icon": "tactics icon-white",
+         "menus": [
+             {
+                 "id": "9088430364604583092449",
+                 "name": "relatorio",
+                 "label": "Relatórios",
+                 "isVisible": true,
+                 "menus": [
+                     {
+                         "id": "9088430362323633071430",
+                         "windowName": "cadGes#gop01000_log_gestao_operacional",
+                         "name:": "gop01000_log_gestao_operacional",
+                         "label": "Log Gestão Operacional",
+                         "isVisible": true
+                     }
+                 ]
+             }    
+         ]
+    },        
+    {
+         "id": "90884303622277371486729",
+         "name": "parametrizacao",
+         "label": "Parametrização",
+         "isVisible": true,
+         "order": 50,
+         "parent": "application",
+         "icon": "tools icon-white",
+         "menus": [
+             {
+                 "id": "9088430364175674809660",
+                 "name": "gop",
+                 "label": "Gestão Operacional",
+                 "isVisible": true,
+                 "menus": [
+                     {
+                         "id": "90884303621598426392429",
+                         "name": "cadastros",
+                         "label": "Cadastros",
+                         "isVisible": true,
+                         "menus": [
+                             {
+                                 "id": "90884303618750532312431",
+                                 "windowName": "cadGes#fai02700_despesas_com_mao_de_obra",
+                                 "name": "fai02700_despesas_com_mao_de_obra",
+                                 "label": "Despesas com Mão de Obra",
+                                 "isVisible": true
+                             },
+                             {
+                                 "id": "90884303622244330642430",
+                                 "windowName": "cadGes#fai32000_despesas_diversas",
+                                 "name": "fai32000_despesas_diversas",
+                                 "label": "Despesas Diversas",
+                                 "isVisible": true
+                             },
+                             {
+                                 "id": "90884303631782846462434",
+                                 "windowName": "cadGes#ger83000_investimento",
+                                 "name": "ger83000_investimento",
+                                 "label": "Investimento",
+                                 "isVisible": true
+                             }
+                         ]
+                     },
+                     {
+                         "id": "90884303611600280492437",
+                         "name": "parametro",
+                         "label": "Parâmetros",
+                         "isVisible": true,
+                         "menus": [
+                             {
+                                 "id": "90884303636382045432442",
+                                 "windowName": "cadGes#gop00800_taxa_administrativa",
+                                 "name": "gop00800_taxa_administrativa",
+                                 "label": "Taxa Administrativa",
+                                 "isVisible": true
+                             },
+                             {
+                                 "id": "908843036570947503927",
+                                 "windowName": "cadGes#ger80200_resultado_operacional",
+                                 "name": "ger80200_resultado_operacional",
+                                 "label": "Parâmetros para Resultado Operacional",
+                                 "isVisible": true
+                             }
+                         ]
+                     }
+                 ]
+             }
+         ]    
+     }       
+ ]

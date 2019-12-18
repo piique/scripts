@@ -1,0 +1,6 @@
+Log Gestão Operacional =====> cadGes#gop01000_log_gestao_operacional
+Despesas com Mão de Obra =====> cadGes#fai02700_despesas_com_mao_de_obra
+Despesas Diversas =====> cadGes#fai32000_despesas_diversas
+Investimento =====> cadGes#ger83000_investimento
+Taxa Administrativa =====> cadGes#gop00800_taxa_administrativa
+Parâmetros para Resultado Operacional =====> cadGes#ger80200_resultado_operacional
