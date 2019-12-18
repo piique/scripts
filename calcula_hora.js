@@ -1,5 +1,5 @@
 /* 
-    Script para calcular a hora de ir embora.
+    Script para calcular a hora de ir embora do sistema web de minha empresa.
     Para que functione é necessário:
     1- Configurar os campos abaixo. Caso não queira colocar usuário e senha no script, apenas digita-los nos campos antes de usar.
     2- Clicar com o botão direito sobre a barra de favoritos do navegador (Chrome: Ctrl+Shift+B).
