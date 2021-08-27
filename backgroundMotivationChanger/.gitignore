@@ -1,0 +1,12 @@
+
+# just commit images that starts with "bad"
+/img/bad_vibes/*
+!/img/bad_vibes/bad*
+
+# just commit images that starts with "good"
+/img/good_vibes/*
+!/img/good_vibes/good*
+
+/__pycache__
+build
+dist
