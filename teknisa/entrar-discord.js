@@ -9,7 +9,7 @@ javascript:
 /*
   Ex: Suprimentos: <a data-list-item-id="channels___878341932420583515" > </a>
 */
-const dataListItemId = "channels___878341932420583515";
+let dataListItemId = "channels___878341932420583515";
 
 var channelsList = document.getElementsByClassName("wrapper-1BJsBx");
 for (let channel of channelsList) {
@@ -34,8 +34,8 @@ setTimeout(() => {
 }, 3000);
 
 setTimeout(() => {
-    const index = document.getElementsByClassName('button-14-BFJ').length === 3 ? 0 : 1;
-    const muteButton = document.getElementsByClassName('button-14-BFJ')[index];
+    let index = document.getElementsByClassName('button-14-BFJ').length === 3 ? 0 : 1;
+    let muteButton = document.getElementsByClassName('button-14-BFJ')[index];
     if(muteButton.ariaChecked != "true"){
         muteButton.click();
     }
